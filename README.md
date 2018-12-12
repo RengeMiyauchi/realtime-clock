@@ -2,7 +2,7 @@
 
 > 🕒 Show the current time where you live on an analogue clock in VRChat.
 
-## Update 12.12.2017. IMPORTANT NOTICE!!!
+## Update 12.12.2018. IMPORTANT NOTICE!!!
 
 Official time server https://maki.cat/time-in-image is shutting down soon. If you still want to use this clock in your worlds you have to host your own time server. Sorry for inconvinience.
 
