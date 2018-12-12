@@ -72,9 +72,9 @@ Shader "Maki/Realtime Clock" {
 			}
 
 			v2f vert(appdata v) {
-				float3 first = tex2Dlod(_MainTex,float4(0.25,0.75,0,0)).rgb;
-				float3 second = tex2Dlod(_MainTex,float4(0.75,0.75,0,0)).rgb;
-				float3 third = tex2Dlod(_MainTex,float4(0.25,0.25,0,0)).rgb;
+				float3 first = LinearToGammaSpace(tex2Dlod(_MainTex,float4(0.25,0.75,0,0)).rgb);
+				float3 second = LinearToGammaSpace(tex2Dlod(_MainTex,float4(0.75,0.75,0,0)).rgb);
+				float3 third = LinearToGammaSpace(tex2Dlod(_MainTex,float4(0.25,0.25,0,0)).rgb);
 
 				float3 offsetTime = float3(
 					getHour(float3(first.r,second.g,third.b)),
