@@ -56,8 +56,4 @@ pm2 start app.js --name "Realtime Clock"
 ## Thank you!
 
 Made by [Maki](https://github.com/makitsune) and
-[Desunyan](https://github.com/Shii2) with lots of love~ *nyan, nyan* <3
-
-*P.S. dont head pat me in vrchat pls...*<br>
-*P.P.S. Desunyan approves this readme. meow~ ^.^*<br>
-*P.P.P.S. he actually just commited that^, so he could pin to his github... x3*
+[Desunyan](https://github.com/Shii2)
