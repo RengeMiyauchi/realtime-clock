@@ -73,7 +73,7 @@ const TimeInImage = function (app,path) {
 
 		res.header({"Content-Type": "image/png"});
 
-		let ip = (req.ip.split(":")[3]);
+		let ip = req.headers['x-appengine-user-ip'];   
 		if (cachedTzs[ip]) {
 			let time = moment().tz(cachedTzs[ip]).format("HH:mm:ss")
 				.split(":").map(x=>parseInt(x));
