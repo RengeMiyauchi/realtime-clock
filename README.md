@@ -2,6 +2,43 @@
 
 > 🕒 Show the current time where you live on an analogue clock in VRChat.
 
+## Update 1.04.2019. google app engine fork and new ip geoloc provider
+
+This is a fork of the Time in image shader and web server by Maki and Desunyan.
+I've made changes to allow the web application to be run in google app engine.
+I've also changed the IP Geolocation service provider to http://ip-api.com/ 
+
+If you just want to use it out of the box, i've configured a public server that you can use to get the current time.
+Just replace the url in the vrc_panorama component with 
+https://public-maki-time-server.appspot.com/clock
+
+Do note that the ip-api service has a rate limit of 150 requests per min, and as this is a public end point, it is not guaranteed that everyone who visits your vrchat map will get their time depending on traffic and what not. The server is hard coded to serve a maximum of 145 requests per minute. Ip-Api will blacklist your servers ip if you exceed 150 requests per minute so be careful with this.
+
+If you want to set up your own google app engine app.
+
+Sign up for an account at https://console.cloud.google.com/getting-started
+
+Create your own project.
+
+Go to google app engine, start a cloud shell.
+
+```sh
+git clone https://github.com/RengeMiyauchi/realtime-clock.git
+cd realtime-clock/server
+gcloud app deploy app.yaml
+```
+
+once done you should see a message
+```sh
+Deployed service [default] to [https://yourprojectname.appspot.com]
+```
+where the name "yourprojectname" will be whatever your project name is
+add /clock to the end of the url and thats the url you need to use for your vrc_panorama
+
+If you want to see how well this detects your local time in vrchat, I've had this running in the map "Bedroom Theatre" for a number of months now. Do note that the Ip-Api sometimes has service outages on a free account during high traffic periods. From my experience around 96% of requests are successfully served. 
+
+IP Geolocation service was switched to Ip-Api as it was originally just scraping off iplocation.net, which some time ago started adding captcha's to deter automated requests such as this app.
+
 ## Update 12.12.2018. IMPORTANT NOTICE!!!
 
 Official time server https://maki.cat/time-in-image is shutting down soon. If you still want to use this clock in your worlds you have to host your own time server. Sorry for inconvinience.
