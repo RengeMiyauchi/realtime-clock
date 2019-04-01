@@ -65,6 +65,8 @@ setInterval(()=>{
 }, 1000*60*60*24*7);
 // every 7 days clear
 
+var requestsPerMin = 0;
+
 const TimeInImage = function (app,path) {
 	this.onRequest = ()=>{};
 
