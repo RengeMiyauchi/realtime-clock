@@ -8,9 +8,10 @@ This is a fork of the Time in image shader and web server by Maki and Desunyan.
 I've made changes to allow the web application to be run in google app engine.
 I've also changed the IP Geolocation service provider to http://ip-api.com/ 
 
-If you just want to use it out of the box, i've configured a public server that you can use to get the current time.
-Just replace the url in the vrc_panorama component with 
-https://public-maki-time-server.appspot.com/clock
+~~If you just want to use it out of the box, i've configured a public server that you can use to get the current time.~~
+~~Just replace the url in the vrc_panorama component with~~
+~~https://public-maki-time-server.appspot.com/clock~~
+no longer providing public end points as its incuring me too much costs
 
 Do note that the ip-api service has a rate limit of 150 requests per min, and as this is a public end point, it is not guaranteed that everyone who visits your vrchat map will get their time depending on traffic and what not. The server is hard coded to serve a maximum of 145 requests per minute. Ip-Api will blacklist your servers ip if you exceed 150 requests per minute so be careful with this.
 
